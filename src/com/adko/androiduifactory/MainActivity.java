@@ -1,4 +1,4 @@
-package com.adko.androidviewfactory;
+package com.adko.androiduifactory;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		AndroidUIFactory factory = new AndroidUIFactory(this);
+		final AndroidUIFactory factory = new AndroidUIFactory(this);
 		
 		final RelativeLayoutFactory layoutFactory = factory.newRelativeLayout()
 				.layoutSize(RelativeLayoutFactory.Size.MATCH_PARENT, RelativeLayoutFactory.Size.MATCH_PARENT)

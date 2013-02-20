@@ -1,4 +1,4 @@
-package com.adko.androidviewfactory;
+package com.adko.androiduifactory;
 
 import android.content.Context;
 import android.view.View;
@@ -161,7 +161,39 @@ class RelativeLayoutFactory {
 	
 }
 
-
+/**
+ * <p>Simplifies building of Android UI by reliving you from having to write boilerplate Android UI code. </p> 
+ * 
+ * <p>Instead of writing code like: </p>
+ * <pre>
+ *	final Button buttonCancel = new Button(this);
+ *	buttonCancel.setText("Cancel");
+ *	buttonCancel.setId(300);
+ *	final RelativeLayout.LayoutParams buttonCancelParams = new RelativeLayout.LayoutParams(
+ *		RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+ *	buttonCancelParams.topMargin = 20;
+ *	buttonCancelParams.addRule(RelativeLayout.BELOW, buttonOk.getId());
+ *	buttonCancelParams.addRule(RelativeLayout.ALIGN_RIGHT, checkbox2.getId());
+ *	buttonCancelParams.addRule(RelativeLayout.ALIGN_LEFT, checkbox2.getId());
+ *	buttonCancel.setLayoutParams(buttonCancelParams);
+ *	layout.addView(buttonCancel);
+ * </pre>			
+ * 
+ * <p>With Android UI Factory the above can be shorten to:</p>
+ * <pre>
+ *	final Button buttonCancel = layoutFactory.newTextView(new Button(this))
+ *		.setText("Cancel")
+ * 		.topMargin(20)
+ * 		.below(buttonOk)
+ * 		.alignLeft(checkbox2)
+ *		.alignRight(checkbox2)
+ * 		.addViewToLayout()
+ * 		.view();	
+ * </pre>
+ * 
+ * @author Adam Siemion
+ *
+ */
 public class AndroidUIFactory {
 	private Context context;
 	private int id = 100;
