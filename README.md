@@ -4,6 +4,7 @@ androiduifactory
 Simplifies building of Android UI by reliving you from having to write boilerplate Android UI code. 
 
 Instead of writing code like:
+
 		final Button buttonCancel = new Button(this);
 		buttonCancel.setText("Cancel");
 		buttonCancel.setId(300);
@@ -17,6 +18,7 @@ Instead of writing code like:
 		layout.addView(buttonCancel);	
 		
 With Android UI Factory	the above can be shorten to:
+
 		final Button buttonCancel = layoutFactory.newTextView(new Button(this))
 				.setText("Cancel")
 				.topMargin(20)
